@@ -1,0 +1,5 @@
+,Architecture,Params (M),Trainable (M),Train time (s),"Inference (s, 500 sent)",ms/sentence,BLEU,chrF,Number preservation (%),Len ratio (hyp/ref),Untranslated (%),Degenerate repeats (%)
+Transformer,encoder-decoder,7.6,7.58,461.2,13.5,27.0,0.3,7.54,3.3,2.4,0.0,72.4
+mT5,encoder-decoder,300.2,300.18,1442.1,32.8,65.5,3.59,21.86,41.4,1.06,0.0,13.2
+LLaMA,decoder-only,1235.8,11.27,373.6,55.8,111.6,10.23,36.04,97.4,1.05,0.0,1.8
+Gemma,decoder-only,268.1,3.8,357.3,66.5,133.0,7.64,30.17,85.5,1.13,0.0,3.2

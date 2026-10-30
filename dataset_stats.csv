@@ -1,0 +1,4 @@
+split,pairs,avg EN words,avg HI words
+train,50000,12.48,13.29
+val,464,15.71,15.77
+test,500,15.84,17.78

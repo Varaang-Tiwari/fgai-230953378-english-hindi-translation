@@ -1,0 +1,1 @@
+{"Params (M)": 7.6, "Trainable (M)": 7.58, "Train time (s)": 461.2, "Inference (s, 500 sent)": 13.5, "ms/sentence": 27.0, "BLEU": 0.3, "chrF": 7.54, "Number preservation (%)": 3.3, "Len ratio (hyp/ref)": 2.4, "Untranslated (%)": 0.0, "Degenerate repeats (%)": 72.4}
