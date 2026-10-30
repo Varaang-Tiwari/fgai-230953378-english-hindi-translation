@@ -56,7 +56,7 @@ Additional quality indicators:
 | LLaMA | 97.4 | 1.05 | 1.8 |
 | Gemma | 85.5 | 1.13 | 3.2 |
 
-![Comparison](results/comparison_plots.png)
+![Comparison](comparison_plots.png)
 
 ## 6. Model comparison and evaluation
 **Overall ranking: LLaMA > Gemma > mT5 > Transformer** on both BLEU and chrF. LLaMA reaches BLEU 10.23 / chrF 36.04, Gemma 7.64 / 30.17, mT5 3.59 / 21.86 and the scratch Transformer 0.30 / 7.54. Absolute BLEU is low for all models because BLEU is harsh on Hindi (rich morphology, free word order, a single noisy reference); chrF is the more informative metric here.
@@ -97,7 +97,7 @@ Setup: first 100 test sentences, pure temperature sampling (no top-k / top-p) at
 | Gemma | 1.0 | 3.26 | 20.26 | 0.565 | 0.956 | 0.0 | 0.0 | 1.0 |
 | Gemma | 1.3 | 0.3 | 14.85 | 0.761 | 0.995 | 0.0 | 1.0 | 1.3 |
 
-![Temperature analysis](results/temperature_analysis.png)
+![Temperature analysis](temperature_analysis.png)
 
 **Observations.**
 - **Diversity rises and repetition falls with temperature for every model** (Distinct-2 goes from 0.11-0.84 under greedy decoding to about 1.0 at T=1.3, repetition from 2-50% to 0%).
@@ -108,7 +108,7 @@ Setup: first 100 test sentences, pure temperature sampling (no top-k / top-p) at
 - **Recommended setting:** for translation, where one faithful meaning is wanted, use greedy or T <= 0.3 (optionally beam search). T=0.7 is only useful when paraphrase variety is wanted and costs about 4 BLEU / 5.7 chrF for LLaMA. T >= 1.0 should not be used.
 
 ## 8. Responsible and ethical AI analysis
-Twelve probe sentences (`results/ethics_probes.csv`) plus the lowest-scoring test translations (`results/worst5_*.csv`) were examined. Selected probes (Transformer output was repetitive and unintelligible on every probe, so it is abbreviated):
+Twelve probe sentences (`ethics_probes.csv`) plus the lowest-scoring test translations (`worst5_*.csv`) were examined. Selected probes (Transformer output was repetitive and unintelligible on every probe, so it is abbreviated):
 
 | Category | English | Transformer | mT5 | LLaMA | Gemma |
 |---|---|---|---|---|---|
@@ -147,9 +147,9 @@ Twelve probe sentences (`results/ethics_probes.csv`) plus the lowest-scoring tes
 ```
 mt_english_hindi_transformer_mt5_llama_gemma.ipynb   # executed notebook with outputs
 README.md
-results/
-  summary_results.csv, dataset_stats.csv, temperature_results.csv, ethics_probes.csv
-  translations_<model>.csv, worst5_<model>.csv, metrics_<model>.json
-  temp_<model>.csv, temp_samples_<model>.md, sample_translations.md, transformer_loss_curve.csv
-  comparison_plots.png, temperature_analysis.png
+summary_results.csv, dataset_stats.csv, temperature_results.csv, ethics_probes.csv
+translations_<model>.csv, worst5_<model>.csv, metrics_<model>.json
+temp_<model>.csv, temp_samples_<model>.md, sample_translations.md, transformer_loss_curve.csv
+comparison_plots.png, temperature_analysis.png
 ```
+(When the notebook is run, it writes these output files into a `results/` folder.)
